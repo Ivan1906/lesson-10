@@ -1,3 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const NavBar = () => <h1>React</h1>;
+const NavBar = () => 
+<div>
+    <h1>Brand</h1>
+    <p>
+        <Link path="/signIn" component={}/>
+        <Link path="/signOut" component={}/>
+    </p>
+</div>;
+
+export default NavBar;
