@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => (
     <React.Fragment>
-        <QuestionPage>
+        <QuestionPage/>
     </React.Fragment>
 );
 
