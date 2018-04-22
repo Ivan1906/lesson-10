@@ -1,15 +1,16 @@
 import { questionsTypes } from './';
 
-const addQuestion = (title, body, dateCreate) => ({
+const addQuestion = (title, body) => ({
     type: questionsTypes.ADD_QUESTION,
     title,
-    body,
-    dateCreate
+    body
 });
 
-const editQuestion = id => ({
+const editQuestion = (id, title, body) => ({
     type: questionsTypes.EDIT_QUESTION,
-    id
+    id,
+    title,
+    body
 });
 
 const sortBy = keySort => ({

@@ -14,6 +14,5 @@ const sortBy = value => ({
 
 export default {
     addAnswer,
-    addVote,
     sortBy
 }

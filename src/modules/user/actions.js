@@ -22,4 +22,4 @@ const forgotPassword = (email) => ({
     password: '123'
 });
 
-export default { signIn, signUp, signUp, forgotPassword };
+export default { signIn, signOut, signUp, forgotPassword };

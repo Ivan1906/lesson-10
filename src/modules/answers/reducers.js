@@ -19,4 +19,6 @@ const answersReducer = (state = {}, action) => {
         default:
             return state;
     }
-}
+};
+
+export default answersReducer;

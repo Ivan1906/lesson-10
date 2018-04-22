@@ -5,12 +5,26 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from './';
 
+const InitState = {
+    answers: {
+        arrayAnswers: [],
+        sortBy: 'createAt'
+    },
+    questions: {
+        arrayQuestions: [],
+        sortBy: '',
+        searchQuestions: ''
+    },
+    user: null,
+    votes: []
+}
+
 const enhancer = compose(
     applyMiddleware(thunk),
     composeWithDevTools(autoRehydrate()),
 );
 
-const store = createStore(reducer, undefined, enhancer);
+const store = createStore(reducer, InitState, enhancer);
 
 persistStore(store, { whitelist: ['user'] });
 

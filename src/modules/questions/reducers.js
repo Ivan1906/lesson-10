@@ -6,6 +6,7 @@ const sortByKey = (array, key) => array.sort((a, b) =>
 
 const searchQuestions = (array, searchText) => array.map(question => {
     if (question.title.include(searchText)) return question;
+    return null;
 });
 
 const questionsReducer = (state = [], action) => {
@@ -18,11 +19,22 @@ const questionsReducer = (state = [], action) => {
                         id: v4(),
                         title: action.title,
                         body: action.body,
-                        dateCreate: action.dateCreate
+                        dateCreate: new Date()
                     }
                 ]
             });
         case questionsTypes.EDIT_QUESTION:
+            return Object.assign({}, state, {
+                arrayQuestions: state.arrayQuestions.map(question => {
+                    if (question.id === action.id) {
+                        return Object.assign({}, question, {
+                            title: action.title,
+                            body: action.body
+                        });
+                    }
+                    return question
+                })
+            });
         case questionsTypes.SEARCH_QUESTION:
             return Object.assign({}, state, {
                 arrayQuestions: searchQuestions(state.arrayQuestions, action.searchText),
