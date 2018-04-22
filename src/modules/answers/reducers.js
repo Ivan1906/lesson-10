@@ -16,8 +16,6 @@ const answersReducer = (state = {}, action) => {
                     }
                 ]
             });
-        case answersTypes.ADD_VOTE:
-            return [];
         default:
             return state;
     }
