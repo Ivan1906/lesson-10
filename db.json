@@ -1,9 +1,38 @@
 {
-    "posts": [
-        { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-        { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "email": "ivan@admin.ua",
+      "password": "123"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "title": "Hello world",
+      "body": "Hello Hello Hello Hello Hello",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "One two",
+      "body": "Ten Ten Ten Ten Ten Ten Ten",
+      "userId": 1
+    }
+  ],
+  "answers": [
+    {
+      "id": 2,
+      "text": "I like an orange",
+      "userId": 1
+    }
+  ],
+  "votes": [
+    {
+      "id": 1,
+      "typeVote": "like",
+      "userId": 1,
+      "answerId": 2
+    }
+  ]
 }

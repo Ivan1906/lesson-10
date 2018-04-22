@@ -2,8 +2,11 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { autoRehydrate, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import API_JsonServer from '../utils/dbJsonServer';
 
 import reducer from './';
+
+console.log(API_JsonServer().get('questions'));
 
 const InitState = {
     answers: {
