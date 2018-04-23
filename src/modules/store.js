@@ -6,7 +6,8 @@ import API_JsonServer from '../utils/dbJsonServer';
 
 import reducer from './';
 
-console.log(API_JsonServer().get('questions'));
+let colques = async () => await API_JsonServer().get('questions');
+console.log(colques());
 
 const InitState = {
     answers: {

@@ -1,15 +1,22 @@
 const BASE_URL = 'http://localhost:3004/';
 
+const getURL = (collection) => `${BASE_URL}${collection}`;
+
+const toJSON = response => response.json();
+
+const toArray = data => data.reduce((resultArray, elemCollection) => {
+    return [ ...resultArray, { ...elemCollection }] 
+}, []);
+
 const API_JsonServer = () => ({
-    get: (collection) => {
-        return fetch(`${BASE_URL}${collection}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(data => data.map(obj => console.log(obj)))
+    get: async (collection) => {
+        let data = await fetch(getURL(collection), {
+                method: "GET",
+                headers: { "Content-Type": "application/json" }
+            }).then(toJSON).then(toArray);
+        console.log(data);
+
+        return data;
     },
 
     delete: () => true
